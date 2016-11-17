@@ -4,7 +4,7 @@
 <?php
 	$errors=array();
 	//Form Validation
-	$required_values=array("menu_name","position","visible");
+	$required_values=array("menu_name","content","subject","position");
 	foreach($required_values as $input){
 		validate($input);
 	}
@@ -20,13 +20,15 @@
 
 <?php
 		$menu_name=mysqli_real_escape_string($connection,$_POST['menu_name']);
+		$parent_subject=mysqli_real_escape_string($connection,$_POST['subject']);
+		$content=mysqli_real_escape_string($connection,$_POST['content']);
 		$position=mysqli_real_escape_string($connection,$_POST['position']);
 		$visible=mysqli_real_escape_string($connection,$_POST['visible']);
 ?>
 
 <?php
-	$query="INSERT INTO subjects (menu_name,position,visible)
-			VALUES ('{$menu_name}', {$position}, {$visible})";
+	$query="INSERT INTO pages (menu_name,subject_id,content,position,visible)
+			VALUES ('{$menu_name}',{$parent_subject}, '{$content}', {$position}, {$visible})";
 	if(mysqli_query($connection,$query)){
 		//Success
 		redirect("content.php");

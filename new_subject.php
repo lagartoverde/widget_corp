@@ -28,11 +28,11 @@
 				</p>
 				<p>
 					Visible:
-					<input type="radio" name="visible" value="0"/>0
+					<input type="radio" name="visible" value="0"/>No
 					&nbsp;
-					<input type="radio" name="visible" value="1"/>1
+					<input type="radio" name="visible" value="1"/>Yes
 				</p>
-				<input type="submit" value="Add Subject"/>
+				<input type="submit"  value="Add Subject"/>
 			</form>
 		<br>
 		<a href="content.php">Cancel</a>
