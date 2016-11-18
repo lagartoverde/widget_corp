@@ -1,5 +1,7 @@
+<?php require_once('includes/session.php'); ?>
 <?php require_once('includes/connection.php'); ?>
 <?php require_once('includes/functions.php'); ?>
+<?php confirm_logged_in(); ?>
 <?php find_selected_page(); ?>
 <?php include('includes/header.php'); ?>
 <table id="structure">
@@ -8,6 +10,8 @@
 			<?php echo navigation($selected_subject,$selected_page); ?>
 			<br>
 			<a href="new_subject.php">+Add a New Subject</a>
+			<br>
+			<a href="staff.php">Return to Menu</a>
 		</td>
 		<td id="page">
 			<h2>

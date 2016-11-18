@@ -1,11 +1,15 @@
+<?php require_once('includes/session.php'); ?>
 <?php require_once('includes/connection.php'); ?>
 <?php require_once('includes/functions.php'); ?>
+<?php confirm_logged_in(); ?>
 <?php find_selected_page() ?>
 <?php include('includes/header.php'); ?>
 <table id="structure">
 	<tr>
 		<td id="navigation">
 			<?php echo navigation($selected_subject,$selected_page); ?>
+			<br>
+			<a href="staff.php">Return to Menu</a>
 		</td>
 		<td id="page">
 		<h2>Add Subject</h2>

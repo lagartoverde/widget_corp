@@ -1,5 +1,7 @@
- <?php require_once('includes/connection.php'); ?>
+<?php require_once('includes/session.php'); ?>
+<?php require_once('includes/connection.php'); ?>
 <?php require_once('includes/functions.php'); ?>
+<?php confirm_logged_in(); ?>
 <?php 
 	if(intval($_GET['subj'])==0){
 		redirect("content.php");
@@ -65,7 +67,7 @@
 if(isset($success)){
 	if($success){
 		echo "<script>";
-		echo "swal(\"Edited\", \"The subject was sucessfully edited!\", \"success\");";
+		echo "swal(\"Edited\", \"The subject was sucessfully edited\", \"success\");";
 		echo "</script>";
 	}else if($fail==1){
 		echo "<script>";
@@ -88,6 +90,8 @@ if(isset($success)){
 			<?php echo navigation($selected_subject,$selected_page); ?>
 			<br>
 			<a href="new_subject.php">+Add a New Subject</a>
+			<br>
+			<a href="staff.php">Return to Menu</a>
 		</td>
 		<td id="page">
 		<h2>Edit Subject: <?php echo $selected_subject['menu_name']; ?></h2>
